@@ -1,0 +1,67 @@
+                +----------------------+
+                |    <<interface>>     |
+                |      Borrowable      |
+                +----------------------+
+                | + borrow(m: string)  |
+                | + returnItem(): str  |
+                | + isAvailable(): bool|
+                +----------------------+
+                          ^
+                          |
+        +------------------------------------------+
+        |      <<abstract>> LibraryItem            |
+        +------------------------------------------+
+        | - _title: string                         |
+        | - itemId: string                         |
+        | - _available: boolean                    |
+        +------------------------------------------+
+        | + title(): string                        |
+        | + id(): string                           |
+        | + available(available: boolean): void    |
+        | + isAvailable(): boolean                 |
+        | + borrow(m: string): string              |
+        | + returnItem(): string                   |
+        | # getDetails(): string {abstract}        |
+        +------------------------------------------+
+            ^                  ^                  ^
+            |                  |                  |
+     +-------------+   +---------------+   +--------------+
+     |    Book     |   |   Magazine    |   |     DVD      |
+     +-------------+   +---------------+   +--------------+
+     | - author    |   | - issueDate   |   | - duration   |
+     +-------------+   +---------------+   +--------------+
+     | + getDetails|   | + getDetails  |   | + getDetails |
+     +-------------+   +---------------+   +--------------+
+
+                 +-------------------------------------+
+                 |           LibraryMember             |
+                 +-------------------------------------+
+                 | - _memberName: string               |
+                 | - _memberId: string                 |
+                 | - _borrowedItems: LibraryItem[]     |
+                 +-------------------------------------+
+                 | + memberName(): string              |
+                 | + memberId(): string                |
+                 | + borrowItem(item: LibraryItem): str|
+                 | + returnItem(itemId: string): str   |
+                 | + listBorrowedItems(): string       |
+                 +-------------------------------------+
+
+                 +-------------------------------------+
+                 |              Library                |
+                 +-------------------------------------+
+                 | - items: LibraryItem[]              |
+                 | - members: LibraryMember[]          |
+                 +-------------------------------------+
+                 | + addItem(item: LibraryItem): void  |
+                 | + addMember(m: LibraryMember): void |
+                 | + findItemById(id: string): LI?     |
+                 | + findMemberById(id: string): LM?   |
+                 | + borrowItem(mid: str, iid: str):str|
+                 | + returnItem(mid: str, iid: str):str|
+                 | + getLibrarySummary(): string       |
+                 +-------------------------------------+
+
+Legend:
+- LI = LibraryItem
+- LM = LibraryMember
