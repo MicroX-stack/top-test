@@ -1,0 +1,61 @@
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>448</x><y>168</y><w>240</w><h>176</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt; 
+         LibraryItem            
+-
+- _title : string                         
+-  itemId : string                         
+- _available : boolean
+-
++ constructor(title : string , itemId : string)
++ title() : string
++ itemId() : string
++ available(available : boolean : void
++ getDetails() : string  {abstract}
++ isAvailable() : boolean
++ borrow(memberName: string) : string
++ returnItem() : string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>776</x><y>144</y><w>288</w><h>80</h></coordinates><panel_attributes>Book  
+-
+- author: string
+-
++ constructor(title : string , itemId : string , author : string)
++ getDetails() : string
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>776</x><y>240</y><w>288</w><h>80</h></coordinates><panel_attributes>Magazine 
+-
+- issueDate : string
+-
++ constructor(title: string , itemId: string , issueDate : string)
++ getDetails() : string
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>776</x><y>336</y><w>288</w><h>80</h></coordinates><panel_attributes>  DVD  
+-
+- duration : number
+-
++ constructor(title : string , itemId : string , duration : number)
++ getDetails() : string
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>184</y><w>112</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>256</y><w>112</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;120;20</additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>328</y><w>112</w><h>64</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;120;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>168</y><w>296</w><h>152</h></coordinates><panel_attributes> Library
+-
+- items : LibraryItem[]              
+- members : LibraryMember[]    
+-
++ addItem(item : LibraryItem) : void  
++ addMember(member : LibraryMember) : void 
++ findItemById(itemId : string) : LibraryItem     
++ findMemberById(memberId : string) : LibraryMember
++ borrowItem(memberId: string, itemId : string) :string
++ returnItem(memberI : string , itemId : string) :string
++ getLibrarySummary() : string     </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>472</x><y>8</y><w>184</w><h>88</h></coordinates><panel_attributes>      &lt;&lt;interface&gt;&gt;     
+      Borrowable      
+-
++ borrow(memberName : string) : string
++ returnItem() : string 
++ isAvailable() : boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>392</y><w>280</w><h>144</h></coordinates><panel_attributes> LibraryMember    
+-
+- _memberName : string               
+- _memberId : string                 
+- _borrowedItems : LibraryItem[]     
+-
++ constructor(memberName: string , memberId : string )
++ memberName() : string              
++ memberId() : string                
++ borrowItem(item: LibraryItem) : string
++ returnItem(itemId: string) : string  
++ listBorrowedItems() : string  </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>552</x><y>88</y><w>24</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>336</y><w>24</w><h>72</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>368</x><y>224</y><w>96</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>368</x><y>288</y><w>120</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;30;20;130;130</additional_attributes></element></diagram>
